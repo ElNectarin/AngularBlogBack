@@ -20,7 +20,7 @@ export class UsersController {
 
   @UseInterceptors(
     FileInterceptor('profilePhoto', {
-      dest: '/home/miri/Документы/Blog/blog-back/src/upload',
+      dest: './uploads/users',
     }),
   )
   @Post('create')

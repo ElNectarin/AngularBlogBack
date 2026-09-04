@@ -42,7 +42,8 @@ export class PostsService {
 
     for (const post of posts) {
       const user = post.user as User;
-      const imagePath = join(process.cwd(), 'src/upload', user.profilePhoto);
+      const profilePhoto = user.profilePhoto || 'default-avatar.png';
+      const imagePath = join(process.cwd(), 'src/upload', profilePhoto);
 
       const buffer = await readFile(imagePath);
       const imageBase64 = buffer.toString('base64');
